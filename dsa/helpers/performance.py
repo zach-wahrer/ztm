@@ -8,6 +8,6 @@ def run_time(function):
         start = time()
         result = function(*args, **kwargs)
         finish = time()
-        print(f"{function.__name__} took {finish - start} seconds")
+        print(f"{function.__name__} took {(finish - start):.10f} seconds")
         return result
     return wrapper
