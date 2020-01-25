@@ -18,6 +18,9 @@ return True
 # array1 = ['a', 'b', 'c', 'x']
 # array2 = ['z', 'y', 'x']
 
+# array1 = [i for i in range(1000)]
+# array2 = [i for i in range(1000, 2000)]
+
 array1 = [i for i in range(100000)]
 array2 = [i for i in range(100001, 200000)]
 
