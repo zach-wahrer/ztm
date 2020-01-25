@@ -12,7 +12,7 @@ Collection of numbers, and a sum
 # input_list = [1, 2, 4, 3, 'a', 5]
 # input_sum = 9
 
-input_list = [i for i in range(500000)]
+input_list = [i for i in range(200000)]
 random.shuffle(input_list)
 input_sum = 1000
 
@@ -45,8 +45,8 @@ def has_pair_with_sum_n_log_n(nums: list, input_sum: int) -> bool:
     pointer1 = 0
     list_length = len(input_list) - 1
     while pointer1 < list_length:
-        for pointer2 in nums[pointer1 + 1:]:
-            if nums[pointer1] + pointer2 == input_sum:
+        for pointer2 in range(pointer1 + 1, list_length):
+            if nums[pointer1] + nums[pointer2] == input_sum:
                 return True
         pointer1 += 1
     return False
