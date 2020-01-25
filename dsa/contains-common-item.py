@@ -15,30 +15,30 @@ return True
 '''
 
 
-# array1 = ['a', 'b', 'c', 'x']
-# array2 = ['z', 'y', 'x']
+# array1 = ['a', 'b', 'c', [1]]
+# array2 = ['z', 'y', [2]]
 
 # array1 = [i for i in range(1000)]
 # array2 = [i for i in range(1000, 2000)]
 
-array1 = [i for i in range(100000)]
-array2 = [i for i in range(100001, 200000)]
+array1 = [i for i in range(10000000)]
+array2 = [i for i in range(10000001, 20000000)]
 
-# Brute Force O((a * b)**2)
+# Brute Force O(a * b)
+# @run_time
+# def match_in_array_brute(array1, array2):
+#     for char in array1:
+#         if char in array2:
+#             return True
+#     return False
+#
+#
+# print(match_in_array_brute(array1, array2))
+
+
 @run_time
-def match_in_array_brute(array1, array2):
-    for char in array1:
-        if char in array2:
-            return True
-    return False
-
-
-print(match_in_array_brute(array1, array2))
-
-
-@run_time
-# Set Solution O(a * b)
-def match_in_array_set(array1, array2):
+# Set Solution O(a+b)
+def match_in_array_set1(array1, array2):
     set_array1 = set(array1)
     for char in array2:
         if char in set_array1:
@@ -46,4 +46,38 @@ def match_in_array_set(array1, array2):
     return False
 
 
-print(match_in_array_set(array1, array2))
+print(match_in_array_set1(array1, array2))
+
+
+@run_time
+# Set Solution O(a+b)
+def match_in_array_set2(array1, array2):
+    # set_array1 = set(array1)
+    set_array1 = set()
+    for i in array1:
+        if i is not None:
+            set_array1.add(i)
+
+    for char in array2:
+        if char in set_array1:
+            return True
+    return False
+
+
+print(match_in_array_set2(array1, array2))
+
+
+@run_time
+# Dict Solution O(a+b)
+def match_in_array_dict(array1, array2):
+    dict_array1 = {}
+    for i in array1:
+        if i not in dict_array1:
+            dict_array1[i] = True
+    for char in array2:
+        if char in dict_array1:
+            return True
+    return False
+
+
+print(match_in_array_dict(array1, array2))
