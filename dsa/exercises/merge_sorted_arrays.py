@@ -66,3 +66,34 @@ def merge_sorted_arrays3(array1, array2):
 
 
 merge_sorted_arrays3(array1, array2)
+
+
+@run_time
+# Two pointers O(n1+n2) v2
+def merge_sorted_arrays4(array1, array2):
+    merged_array = []
+    pointer1 = 0
+    pointer2 = 0
+    length1 = len(array1)
+    length2 = len(array2)
+    while pointer1 < length1 and pointer2 < length2:
+
+        if array1[pointer1] < array2[pointer2]:
+            merged_array.append(array1[pointer1])
+            pointer1 += 1
+        else:
+            merged_array.append(array2[pointer2])
+            pointer2 += 1
+
+    while pointer1 < length1:
+        merged_array.append(array1[pointer1])
+        pointer1 += 1
+
+    while pointer2 < length2:
+        merged_array.append(array2[pointer2])
+        pointer2 += 1
+
+    return merged_array
+
+
+merge_sorted_arrays3(array1, array2)
