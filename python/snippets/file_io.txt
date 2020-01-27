@@ -1,0 +1,16 @@
+This is a test file.
+
+I'm writing you to say that you have read through my github repository.
+
+Thanks for checking it out and I hope you found something useful.
+
+Cheers,
+Zach
+00:00:00This is a test string that I added via file_io.py
+00:00:00This is a test string that I added via file_io.py
+00:00:00This is a test string that I added via file_io.py
+2020-01-27 12:23:18.078298This is a test string that I added via file_io.py
+2020-01-27 12:23:19.382343This is a test string that I added via file_io.py
+2020-01-27 12:23:27.371662 This is a test string that I added via file_io.py
+2020-01-27 12:23:29.504117 This is a test string that I added via file_io.py
+2020-01-27 12:23:36.805011 This is a test string that I added via file_io.py
