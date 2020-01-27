@@ -1,0 +1,6 @@
+Hello, my name is Zach. I'm going to translate this file into Japanese.
+That would be really hard without a module, but I think I can find something
+to help me out.
+こんにちは、私の名前はザックです。私は日本にこのファイルを変換するつもりです
+こんにちは、私の名前はザックです。私は日本にこのファイルを変換するつもりです。
+こんにちは、私の名前はザックです。私は日本にこのファイルを変換するつもりです。
