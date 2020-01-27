@@ -6,15 +6,19 @@ def main():
     num1, num2 = cl_input_checking()
     random_number = randint(num1, num2)
 
-    while True:
-        guess = guess_checking(input("What is your guess?: "), num1, num2)
-        if guess == random_number:
-            print(f"You win! You guessed the random number: {random_number}.")
-            break
-        elif guess is None:
-            print("Try again.")
-        else:
-            print(f"{guess} is not the random number. Try again.")
+    try:
+        while True:
+            guess = guess_checking(input("What is your guess?: "), num1, num2)
+            if guess == random_number:
+                print(f"You win! You guessed the random number: {random_number}.")
+                break
+            elif guess is None:
+                print("Try again.")
+            else:
+                print(f"{guess} is not the random number. Try again.")
+    except EOFError:
+        print("\nGiving up so soon?")
+        quit()
 
 
 def guess_checking(guess, num1, num2):
@@ -24,7 +28,7 @@ def guess_checking(guess, num1, num2):
         print("Guess must be a number.")
         return None
     if guess < num1 or guess > num2:
-        print("Your guess must be within the range of the game numbers.")
+        print(f"Your guess must be within the range of {num1} and {num2}.")
         return None
     return guess
 
