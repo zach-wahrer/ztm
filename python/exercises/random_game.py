@@ -3,12 +3,33 @@ from random import randint
 
 
 def main():
-    num1, num2 = input_checking()
+    num1, num2 = cl_input_checking()
     random_number = randint(num1, num2)
-    print(random_number)
+
+    while True:
+        guess = guess_checking(input("What is your guess?: "), num1, num2)
+        if guess == random_number:
+            print(f"You win! You guessed the random number: {random_number}.")
+            break
+        elif guess is None:
+            print("Try again.")
+        else:
+            print(f"{guess} is not the random number. Try again.")
 
 
-def input_checking():
+def guess_checking(guess, num1, num2):
+    try:
+        guess = int(guess)
+    except ValueError:
+        print("Guess must be a number.")
+        return None
+    if guess < num1 or guess > num2:
+        print("Your guess must be within the range of the game numbers.")
+        return None
+    return guess
+
+
+def cl_input_checking():
     if len(argv) != 3:
         print_usage()
     try:
@@ -20,7 +41,7 @@ def input_checking():
     if num1 < 1 or num2 < 1:
         print("Input numbers must be greater than 0.")
         print_usage()
-    if num1 > num2:
+    if num1 >= num2:
         print("Start_number must be less than end_number.")
         print_usage()
 
