@@ -8,20 +8,27 @@ def main():
 
     try:
         while True:
-            guess = guess_checking(input("What is your guess?: "), num1, num2)
-            if guess == random_number:
-                print(f"You win! You guessed the random number: {random_number}.")
+            guess = guess_validation(input("What is your guess?: "), num1, num2)
+            if guess_result(guess, random_number):
                 break
-            elif guess is None:
-                print("Try again.")
-            else:
-                print(f"{guess} is not the random number. Try again.")
     except EOFError:
         print("\nGiving up so soon?")
         quit()
 
 
-def guess_checking(guess, num1, num2):
+def guess_result(guess, random_number):
+    if guess == random_number:
+        print(f"You win! You guessed the random number: {random_number}.")
+        return True
+    elif not guess:
+        print("Try again.")
+        return False
+    else:
+        print(f"{guess} is not the random number. Try again.")
+        return False
+
+
+def guess_validation(guess, num1, num2):
     try:
         guess = int(guess)
     except ValueError:
